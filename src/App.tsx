@@ -1,12 +1,13 @@
-import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "./Redux/Store"
 import { decrement, increment, incrementByAmount } from "./Redux/Features/Counter/CounterSlice"
+import { useAppDispatch, useAppSelector } from "./Redux/Hooks"
 
 function App() {
  
-    const {count} = useSelector( (state:RootState) => state.counter)
-    const dispatch = useDispatch()
+    const {count} = useAppSelector( state => state.counter)
+    const dispatch = useAppDispatch()
 
+
+    
   return (
     <>
       <h1 className="text-blue-500 text-center font-bold my-10">Redux explore by typescript</h1>
